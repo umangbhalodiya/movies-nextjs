@@ -1,0 +1,44 @@
+@import '../mixins/typography.scss';
+@import '../mixins/color.scss';
+@import '../mixins/typography.scss';
+
+@mixin normal-box-shadow {
+    box-shadow: 0 4px 10px #0000000d;
+}
+
+@mixin blue-light-shadow {
+    box-shadow: 0px 2px 21px 0px #0047f024;
+}
+
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin cursor-pointer {
+    cursor: pointer;
+}
+
+@mixin flex-items-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin fill-button {
+    background-color: $light-blue;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-family: 'DM Sans', sans-serif;
+    border: none;
+    cursor: pointer;
+    @include text;
+    font-weight: 500;
+    color: $white;
+    user-select: none;
+}
+
+@mixin justify-center {
+    display: flex;
+    justify-content: center;
+}

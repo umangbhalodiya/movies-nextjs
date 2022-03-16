@@ -1,0 +1,22 @@
+// @use  '';
+@use "../mixins/breakpoint.scss" as bp;
+$bp: (
+  base: 0px,
+  sm: 540px,
+  md: 992px,
+  lg: 1280px,
+);
+
+
+.container {
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+    @include bp.breakpoint(md) {
+      max-width: 80%;
+    }
+    @include bp.breakpoint(lg) {
+      max-width: 1280px;
+    }
+  }
+  

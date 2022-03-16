@@ -1,0 +1,3 @@
+@function col($count: 1, $columns: 12) {
+  @return percentage($count / $columns);
+}

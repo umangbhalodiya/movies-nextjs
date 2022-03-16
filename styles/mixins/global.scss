@@ -1,0 +1,138 @@
+// @use './mixins/breakpoint.scss';
+// @use './mixins/typography.scss';
+// @use './mixins/columns.scss';
+// @use './function/columns.scss';
+// @use './layout/container.scss';
+// @use './mixins/index.scss';
+
+@import "../function/columns.scss";
+@import "../layout/container.scss";
+@import "../mixins/columns.scss";
+@import "../mixins/breakpoint.scss";
+@import "../mixins/index.scss";
+@import "../mixins/color.scss";
+@import "../mixins/typography.scss";
+
+.form-control {
+  label {
+    display: block;
+    @include text-small;
+    color: $gray;
+    font-size: 14px;
+  }
+  textarea {
+    width: -webkit-fill-available;
+    padding: 12px;
+    @include text;
+    color: $gray;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    height: 180px;
+    @include breakpoint("max-sm") {
+      height: 80px;
+      width: 100%;
+    }
+    &:focus {
+      border: 1px solid $light-blue;
+      outline: none;
+    }
+  }
+  input {
+    width: -webkit-fill-available;
+    padding: 12px;
+    @include text;
+    color: $gray;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    height: 45px;
+    @include breakpoint("max-sm") {
+      width: 100%;
+    }
+    &:focus {
+      border: 1px solid $light-blue;
+      outline: none;
+    }
+  }
+
+  input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+  }
+  select {
+    width: -webkit-fill-available;
+    padding: 0 5px;
+    @include text;
+    color: $gray;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    height: 45px;
+    @include breakpoint("max-sm") {
+      width: 100%;
+    }
+    &:focus {
+      border: 1px solid $light-blue;
+      outline: none;
+    }
+  }
+  ::placeholder {
+    @include text;
+    color: $gray;
+  }
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+}
+
+input:disabled {
+  border-bottom: 1px solid #efefef !important;
+  background-color: #fff;
+  border: none;
+}
+
+input:disabled ::placeholder {
+  @include text-sm;
+}
+
+.globally-add-breadcrumb-alignment {
+  padding: 120px 0 40px 0;
+  /* Style the list */
+  ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: $background-color;
+  }
+
+  /* Display list items side by side */
+  ul.breadcrumb li {
+    display: inline;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  /* Add a slash symbol (/) before/behind each list item */
+  ul.breadcrumb li + li:before {
+    padding: 8px;
+    color: #757575;
+    content: "/\00a0";
+  }
+
+  /* Add a color to all links inside the list */
+  ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+  }
+
+  /* Add a color on mouse-over */
+  ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: none;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}

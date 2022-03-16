@@ -1,0 +1,30 @@
+@use '../mixins/breakpoint.scss';
+@use '../function/columns.scss';
+
+
+@mixin col(
+  $columns: 12,
+  $lg: $columns,
+  $md: $columns,
+  $sm: $columns,
+  $base: $columns
+) {
+  @if $base != $columns {
+    max-width: columns.col($base, $columns);
+  }
+  @if $sm != $columns {
+    @include bp.breakpoint(sm) {
+      max-width: columns.col($sm, $columns);
+    }
+  }
+  @if $md != $columns {
+    @include bp.breakpoint(md) {
+      max-width: columns.col($md, $columns);
+    }
+  }
+  @if $lg != $columns {
+    @include bp.breakpoint(lg) {
+      max-width: columns.col($lg, $columns);
+    }
+  }
+}
