@@ -1,8 +1,5 @@
-// const protocol = "http";
-// const host = "192.168.29.123:5500/api";
-
 const protocol = "https";
-const host = "api.nijateleurgentcare.rejoicehub.com/api";
+const host = "imdb-api.com/en/API/Title/k_35hkqbqy";
 
 const port = "";
 const trailUrl = "";
