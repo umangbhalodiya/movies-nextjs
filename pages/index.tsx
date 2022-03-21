@@ -12,6 +12,11 @@ const Home = () => {
   const [movies, setMovies] = useState([]);
   const [databox, setDatabox] = useState(false);
 
+  useEffect(() => {
+    document.title = "Moobiess";
+    // setAtitle("BlueBird | Order");
+  }, []);
+
   const searchMoveis = () => {
     axios
       .get(`https://imdb-api.com/en/API/SearchTitle/k_5gq0n13b/${searchData}`)
@@ -69,6 +74,7 @@ const Home = () => {
                   </div>
                 </div>
                 {movies.map((movie: any, i) => {
+                  var movi = movie.title.search(/Undefined/);
                   return (
                     <div
                       key={i}
@@ -77,7 +83,10 @@ const Home = () => {
                         setDatabox(false);
                       }}
                     >
-                      {movie.title}&nbsp;
+                      {movie.title
+                        ? movie.title.replace(movi, "")
+                        : movie.title}
+                      &nbsp;
                     </div>
                   );
                 })}

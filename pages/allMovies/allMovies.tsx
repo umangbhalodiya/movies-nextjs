@@ -8,11 +8,11 @@ import StarRoundedIcon from "@mui/icons-material/StarRounded";
 import Link from "next/link";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import axios from "axios";
-import Image from 'next/image'
+import Image from "next/image";
 
 function AllPopularMovies() {
   const [movies, setMovies] = useState([]);
-
+ 
   useEffect(() => {
     getPopularMoviesData();
   }, []);
@@ -29,6 +29,7 @@ function AllPopularMovies() {
     <div className={styles.container}>
       <Head>
         <Header />
+        <title> Moobiess | All Movies </title>
       </Head>
       <Link href="/" passHref>
         <ChevronLeftIcon
@@ -43,13 +44,15 @@ function AllPopularMovies() {
       </Link>
       <main className={styles.main}>
         <div className={styles.grid}>
-          {movies?.map((movie: any,i) => {
+          {movies?.map((movie: any, i) => {
             return (
               <a className={styles.card} key={i}>
                 <Image
                   className={styles.movieposter}
                   alt=""
                   width="200px"
+                  height="300px"
+                  layout="responsive"
                   src={movie?.image}
                 />
                 <p>{movie.fullTitle}</p>

@@ -531,7 +531,7 @@ header {
 input[type="text"] {
   position: relative;
   padding: 15px 40px 15px 20px;
-  width: 200px;
+  width: 300;
   color: #001f3d;
   font-size: 16px;
   font-weight: 100;
@@ -543,10 +543,6 @@ input[type="text"] {
   outline: none;
   &::placeholder {
     color: #001f3d;
-  }
-
-  &:focus {
-    width: 300px;
   }
 }
 

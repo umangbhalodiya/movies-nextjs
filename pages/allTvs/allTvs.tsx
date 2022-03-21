@@ -7,7 +7,7 @@ import data from "../../tvs.json";
 import Link from "next/link";
 import axios from "axios";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import Image from 'next/image'
+import Image from "next/image";
 
 function AllPopularTvs() {
   const [movies, setMovies] = useState([]);
@@ -29,6 +29,7 @@ function AllPopularTvs() {
       <div className={styles.container}>
         <Head>
           <Header />
+          <title> Moobiess | All TVs </title>
         </Head>
         <Link href="/" passHref>
           <ChevronLeftIcon
@@ -43,13 +44,15 @@ function AllPopularTvs() {
         </Link>
         <main className={styles.main}>
           <div className={styles.grid}>
-            {movies?.map((movie: any,i) => {
+            {movies?.map((movie: any, i) => {
               return (
                 <a className={styles.card} key={i}>
                   <Image
                     className={styles.movieposter}
                     alt=""
                     width="200px"
+                    height="300px"
+                    layout="responsive"
                     src={movie?.image}
                   />
                   <p>{movie.fullTitle}</p>

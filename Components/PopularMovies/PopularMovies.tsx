@@ -40,6 +40,8 @@ const PopularMovies = () => {
                   className={styles.movieposter}
                   alt=""
                   width="200px"
+                  height="300px"
+                  layout="responsive"
                   src={movie?.image}
                 />
                 <p>{movie.fullTitle}</p>
